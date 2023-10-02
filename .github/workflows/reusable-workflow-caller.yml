@@ -17,5 +17,5 @@ jobs:
         uses: ./.github/workflows/resusable-workflow-called.yml  # Reference the local reusable workflow template
         with:
           username: akramewu
-        secrets:
+         secrets:
           token: ${{ secrets.TOKEN }}
