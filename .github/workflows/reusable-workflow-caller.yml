@@ -1,4 +1,4 @@
-name: resusable-workflow-caller
+name: reusable-workflow-caller
 
 on:
   push:
@@ -10,16 +10,17 @@ on:
   workflow_dispatch:
 
 jobs:
-      call-workflow-A:
-        runs-on: ubuntu-latest
-    
-        steps:
-          - name: Run Reusable Workflow
-            run: |
-              echo "Running the reusable workflow template..."
-              .github/workflows/reusable-workflow-called.yml  # Reference the local reusable workflow template file
-             with:
-              username: akramewu
-            env:
-              TOKEN: ${{ secrets.TOKEN }}
+  call-workflow-A:
+    uses: akramewu/reusable-workflow/.github/workflows/reusable-workflow-called.yml@main
           
+    with:
+      username: Houssem
+    secrets:
+      token: ${{ secrets.TOKEN }}
+
+  call-workflow-B:
+    uses: akramewu/reusable-workflow/.github/workflows/reusable-workflow-called.yml@main
+    with:
+      username: Dellai
+    secrets:
+      token: ${{ secrets.TOKEN }}
