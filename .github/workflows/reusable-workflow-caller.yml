@@ -11,16 +11,10 @@ on:
 
 jobs:
   call-workflow-A:
-    uses: akramewu/reusable-workflow/.github/workflows/reusable-workflow-called.yml@main
+    uses: ./.github/workflows/reusable-workflow-called.yml
           
     with:
-      username: Houssem
+      username: akramewu
     secrets:
       token: ${{ secrets.TOKEN }}
 
-  call-workflow-B:
-    uses: akramewu/reusable-workflow/.github/workflows/reusable-workflow-called.yml@main
-    with:
-      username: Dellai
-    secrets:
-      token: ${{ secrets.TOKEN }}
