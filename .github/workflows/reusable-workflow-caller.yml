@@ -1,19 +1,21 @@
-name: resusable-workflow-caller
+name: Reusable Workflow Caller
 
 on:
   push:
-    branches: none # [ main ]
-  pull_request:
-    branches: none # [ main ]
-
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
+    branches:
+      - main
 
 jobs:
   call-workflow-A:
-    uses: akramewu/reusable-workflow/.github/workflows/reusable-workflow-called.yml@main
-    with:
-      username: akramewu
-    secrets:
-      token: ${{ secrets.TOKEN }}
-          
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v2
+
+      - name: Run Reusable Workflow
+        uses: ./.github/workflows/resusable-workflow-called.yml  # Reference the local reusable workflow template
+        with:
+          username: akramewu
+        secrets:
+          token: ${{ secrets.TOKEN }}
