@@ -14,9 +14,6 @@ jobs:
         runs-on: ubuntu-latest
     
         steps:
-          - name: Checkout Code
-            uses: actions/checkout@v2
-    
           - name: Run Reusable Workflow
             run: |
               echo "Running the reusable workflow template..."
