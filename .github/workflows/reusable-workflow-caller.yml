@@ -11,7 +11,7 @@ on:
 
 jobs:
   call-workflow-A:
-    uses: akramewu/reusable-workflow/.github/workflows/reusable-workflow-caller.yml@main
+    uses: akramewu/reusable-workflow/.github/workflows/reusable-workflow-called.yml@main
     with:
       username: akramewu
     secrets:
