@@ -6,9 +6,6 @@ on:
       username:
         required: true
         type: string
-      username2:
-        required: true
-        type: string
     secrets:
       token:
         required: true
@@ -19,9 +16,3 @@ jobs:
     steps:
       - name: Run a hello world script
         run: echo Hello, ${{ inputs.username }}
-
-  another_job:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Run a hello world script
-        run: echo Hello, ${{ inputs.username2 }}
