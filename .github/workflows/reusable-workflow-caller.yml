@@ -18,3 +18,13 @@ jobs:
     secrets:
       token: ${{ secrets.TOKEN }}
 
+
+  call-workflow-B:
+    uses: ./.github/workflows/reusable-workflow-called.yml
+          
+    with:
+      username2: akramtestewu
+    secrets:
+      token: ${{ secrets.TOKEN }}
+
+
