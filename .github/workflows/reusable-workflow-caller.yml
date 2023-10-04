@@ -15,7 +15,9 @@ jobs:
           
     with:
       username: akramewu
+      new_username: akramewutest
     secrets:
       token: ${{ secrets.TOKEN }}
+      
 
 
